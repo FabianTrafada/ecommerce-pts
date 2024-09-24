@@ -10,26 +10,46 @@
 
 
 /*=============== SHOW CART ===============*/
-
+const cart = document.getElementById('cart');
+const cartShop = document.getElementById('cart-shop');
+const cartClose = document.getElementById('cart-close');
 
 /*===== CART SHOW =====*/
 /* Validate if constant exists */
-
+if (cartShop) {
+  cartShop.addEventListener('click', () => {
+    cart.classList.add("show-cart")
+  })
+}
 
 /*===== CART HIDDEN =====*/
 /* Validate if constant exists */
-
+if (cartClose) {
+  cartClose.addEventListener('click', () => {
+    cart.classList.remove("show-cart")
+  })
+}
 
 /*=============== SHOW LOGIN ===============*/
-
+const login = document.getElementById('login');
+const loginOpen = document.getElementById('login-toggle');
+const loginClose = document.getElementById('login-close');
 
 /*===== LOGIN SHOW =====*/
 /* Validate if constant exists */
-
+if (loginOpen) {
+  loginOpen.addEventListener('click', () => {
+    login.classList.add("show-login")
+  })
+}
 
 /*===== LOGIN HIDDEN =====*/
 /* Validate if constant exists */
-
+if (loginClose) {
+  loginClose.addEventListener('click', () => {
+    login.classList.remove("show-login")
+  })
+}
 
 /*=============== HOME SWIPER ===============*/
 var homeSwiper = new Swiper(".home-swiper", {
@@ -52,10 +72,20 @@ function scrollHeader() {
 
 window.addEventListener('scroll', scrollHeader);
 /*=============== NEW SWIPER ===============*/
-
+var newSwiper = new Swiper(".new-swiper", {
+  spaceBetween: 16,
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  loop: 'true',
+});
 
 /*=============== SHOW SCROLL UP ===============*/ 
+function scrollUp () {
+  const scrollUp = document.getElementById('scroll-up')
 
+  if(this.scrollY >= 350) scrollUp.classList.add("show-scroll"); else scrollUp.classList.remove("show-scroll");
+}
+window.addEventListener('scroll', scrollUp)
 
 /*=============== LIGHT BOX ===============*/
 
